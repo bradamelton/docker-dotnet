@@ -1,0 +1,9 @@
+rem https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2.4/2.2.4.md#downloads
+
+
+
+rem ENV DOTNET_SDK_VERSION 2.2.103
+
+rem https://dotnetcli.blob.core.windows.net/dotnet/Sdk/2.2.103/dotnet-sdk-2.2.103-linux-musl-x64.tar.gz \
+
+rem https://dotnetcli.blob.core.windows.net/dotnet/Runtime/2.2.4/dotnet-runtime-2.2.4-linux-musl-x64.tar.gz
