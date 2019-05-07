@@ -1,6 +1,12 @@
 FROM alpine:latest
 
+RUN apk add libstdc++
+RUN apk add libgcc
+RUN apk add libintl
+RUN apk add icu
+
 ENV DOTNET_VERSION 2.2.4
+ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
 
 RUN apk add --no-cache --virtual .build-deps \
         openssl \

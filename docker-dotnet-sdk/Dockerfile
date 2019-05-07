@@ -2,10 +2,10 @@ FROM alpine:latest
 
 RUN apk add libstdc++
 RUN apk add libintl
-RUN apk add libunwind
 RUN apk add icu
 
 ENV DOTNET_VERSION 2.2.106
+ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
 
 RUN apk add --no-cache --virtual .build-deps \
         openssl \
@@ -17,3 +17,5 @@ RUN apk add --no-cache --virtual .build-deps \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet \
     && rm dotnet.tar.gz \
 && apk del .build-deps
+
+RUN dotnet help
