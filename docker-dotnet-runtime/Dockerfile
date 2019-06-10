@@ -1,5 +1,6 @@
 FROM alpine:latest
 
+RUN apk update
 RUN apk add libstdc++
 RUN apk add libgcc
 RUN apk add libintl
@@ -16,5 +17,4 @@ RUN apk add --no-cache --virtual .build-deps \
     && mkdir -p /usr/share/dotnet \
     && tar -C /usr/share/dotnet -xzf dotnet.tar.gz \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet \
-    && rm dotnet.tar.gz \
-&& apk del .build-deps
+    && rm dotnet.tar.gz 
