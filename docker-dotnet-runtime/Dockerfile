@@ -5,6 +5,7 @@ RUN apk add libstdc++
 RUN apk add libgcc
 RUN apk add libintl
 RUN apk add icu
+RUN apk add tzdata
 
 ENV DOTNET_VERSION 2.2.4
 ENV DOTNET_CLI_TELEMETRY_OPTOUT 1

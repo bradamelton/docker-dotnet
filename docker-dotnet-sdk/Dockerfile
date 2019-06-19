@@ -4,6 +4,7 @@ RUN apk update
 RUN apk add libstdc++
 RUN apk add libintl
 RUN apk add icu
+RUN apk add tzdata
 
 ENV DOTNET_VERSION 2.2.106
 ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
