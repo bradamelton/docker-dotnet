@@ -7,10 +7,12 @@ RUN apk add icu
 ENV DOTNET_VERSION 2.2.106
 ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
 
+
+
 RUN apk add --no-cache --virtual .build-deps \
         openssl \
-    && wget -O dotnet.tar.gz https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$DOTNET_VERSION/dotnet-sdk-$DOTNET_VERSION-linux-musl-x64.tar.gz \
-    && dotnet_sha512='c02a34f8aea4de56f536ad365e10112857c8813abc043e688816569ac72154fe58d21c35836d00cbe6d44a0fe3e4515dac4e67326648f42c95d19bb73817f8ee' \
+    && wget -O dotnet.tar.gz https://download.visualstudio.microsoft.com/download/pr/e301fc5c-c8dd-4f8e-94ee-d19f3caf508f/a4191801aeb8cd813cf7057ac4d936a0/dotnet-sdk-3.1.402-linux-musl-x64.tar.gz \
+    && dotnet_sha512='30916407ee1f99c0f1398a45aa1a480b6d75c5e42488c877b7879ea68a03de07b29943e89e9324c3b14df4ca1d2723116a5c4812b2265cbb103488706aa56b70' \
     && echo "$dotnet_sha512  dotnet.tar.gz" | sha512sum -c - \
     && mkdir -p /usr/share/dotnet \
     && tar -C /usr/share/dotnet -xzf dotnet.tar.gz \
