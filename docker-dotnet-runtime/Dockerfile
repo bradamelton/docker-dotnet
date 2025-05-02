@@ -12,8 +12,8 @@ ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
 
 RUN apk add --no-cache --virtual .build-deps \
     openssl \
-    && wget -O dotnet.tar.gz https://download.visualstudio.microsoft.com/download/pr/58737b13-a9b4-4ebf-a360-6b8909842ba6/0856279338ab22a3efbdf387068ebfac/aspnetcore-runtime-6.0.6-linux-musl-x64.tar.gz \
-    && dotnet_sha512='0ecaf750ecf0eb1da601baed2c71a7a09994fe82ef11c4896c57e07d480e5820fb9f92b5fe55e35bf72f067894b85d7d33d3955f15b670d4282ec5049e52f124' \
+    && wget -O dotnet.tar.gz https://builds.dotnet.microsoft.com/dotnet/Runtime/9.0.4/dotnet-runtime-9.0.4-linux-musl-x64.tar.gz \
+    && dotnet_sha512='a5e597643deae25a998759bd9b0eb19b933f13a36b1d7f2e4696068a9a9e0324bfd43490e8dec222168b8c063b6827fbee80181e4700bb4712550acc1801048c' \
     && echo "$dotnet_sha512  dotnet.tar.gz" | sha512sum -c - \
     && mkdir -p /usr/share/dotnet \
     && tar -C /usr/share/dotnet -xzf dotnet.tar.gz \
